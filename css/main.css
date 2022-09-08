@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+    --base-color: 215;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f1f3;
+}
+
+.container {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 1.5rem;
+}
+
+.header {
+    width: 100%;
+    background: white;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.header__logo {
+    background-color: hsl(var(--base-color), 45%, 55%);
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.25rem;
+    transform: rotate(6deg);
+}
+
+.header__logo-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: white;
+}
+
+.header__title {
+    color: hsl(var(--base-color), 15%, 15%);
+    font-weight: 500;
+    font-size: 1.75rem;
+}
+
+.main__title {
+    font-size: 1.5rem;
+    color: hsl(var(--base-color), 15%, 15%);
+}
+
+.kanban {
+    display: flex;
+    flex-direction: column;
+    max-width: 750px;
+    width: 100%;
+    margin-top: 1.25rem;
+    border-radius: 5px;
+    gap: 2.5rem;
+}
+
+.kanban__column {
+    flex: 1;
+    border-radius: 1.25rem;
+}
+
+.kanban__column-title {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    user-select: none;
+    color: hsl(var(--base-color), 15%, 25%);
+    font-weight: 600;
+}
+
+.kanban__item-input {
+    padding: 0.75rem 1.25rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.kanban__item-input:hover {
+    background-color: hsl(var(--base-color), 15%, 98%);
+}
+
+.kanban__dropzone {
+    height: 0.75rem;
+    transition: background 0.15s, height 0.15s;
+    border-radius: 0.5rem;
+}
+
+.kanban__dropzone--active {
+    height: 50px;
+    margin: 0.25rem auto 0.25rem;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.kanban__add-item {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    color: white;
+    text-align: left;
+    background-color: hsl(var(--base-color), 15%, 35%);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.kanban__add-item:hover {
+    background-color: hsl(var(--base-color), 15%, 45%);
+}
+
+@media screen and (min-width: 48rem) {
+    .kanban {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .kanban__column:not(:last-child) {
+        margin-right: 30px;
+    }
+}
